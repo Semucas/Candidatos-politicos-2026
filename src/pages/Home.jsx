@@ -26,17 +26,17 @@ function Home() {
                 <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>¿Qué se elige en 2026?</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
 
-                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem' }}>
+                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem', color: '#1a1a2e' }}>
                         <h3>🏛️ Presidente</h3>
                         <p>El Presidente de Colombia es elegido por voto popular para un período de 4 años. Es el Jefe de Estado y de Gobierno.</p>
                     </div>
 
-                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem' }}>
+                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem', color: '#1a1a2e' }}>
                         <h3>📜 Senado</h3>
                         <p>El Senado está compuesto por 108 senadores elegidos en circunscripción nacional para un período de 4 años.</p>
                     </div>
 
-                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem' }}>
+                    <div style={{ background: '#f4f4f4', borderRadius: '12px', padding: '1.5rem', color: '#1a1a2e' }}>
                         <h3>🏢 Cámara de Representantes</h3>
                         <p>La Cámara tiene 188 representantes elegidos por circunscripciones territoriales y especiales.</p>
                     </div>

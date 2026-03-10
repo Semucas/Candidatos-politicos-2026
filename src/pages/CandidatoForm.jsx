@@ -90,3 +90,5 @@ function CandidatoForm() {
 }
 
 export default CandidatoForm
+
+

@@ -61,7 +61,7 @@ function Candidatos() {
                             alt={candidato.nombre}
                             style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '8px' }}
                         />
-                        <h3 style={{ margin: '0.8rem 0 0.3rem' }}>{candidato.nombre}</h3>
+                        <h3 style={{ margin: '0.8rem 0 0.3rem', color: '#1a1a2e' }}>{candidato.nombre}</h3>
                         <p style={{ color: '#666', margin: '0.2rem 0' }}>🏛️ {candidato.cargo}</p>
                         <p style={{ color: '#666', margin: '0.2rem 0' }}>🎗️ {candidato.partido}</p>
                         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
