@@ -22,7 +22,7 @@ function Home() {
             </div>
 
             {/* Info electoral */}
-            <div style={{ padding: '3rem 2rem', maxWidth: '900px', margin: '0 auto' }}>
+            <div style={{ padding: '3rem 2rem', maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>¿Qué se elige en 2026?</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
 

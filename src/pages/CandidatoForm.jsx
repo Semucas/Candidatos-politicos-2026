@@ -49,7 +49,7 @@ function CandidatoForm() {
     }
 
     return (
-        <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '2rem' }}>
+        <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '2rem', textAlign: 'center' }}>
             <h2>{esEdicion ? '✏️ Editar Candidato' : '➕ Nuevo Candidato'}</h2>
 
             <label>Nombre *</label>

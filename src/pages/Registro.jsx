@@ -20,7 +20,7 @@ function Registro() {
     }
 
     return (
-        <div style={{ maxWidth: '400px', margin: '2rem auto', padding: '2rem' }}>
+        <div style={{ maxWidth: '400px', margin: '2rem auto', padding: '2rem', textAlign: 'center' }}>
             <h2>Registro</h2>
             <input
                 type="email"

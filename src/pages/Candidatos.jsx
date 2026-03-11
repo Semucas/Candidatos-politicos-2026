@@ -42,7 +42,7 @@ function Candidatos() {
     )
 
     return (
-        <div style={{ padding: '2rem', maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ padding: '2rem', maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <h2>🗳️ Candidatos 2026</h2>
                 {session && (
