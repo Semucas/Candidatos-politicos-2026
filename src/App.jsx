@@ -15,11 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/candidatos" element={
-          <ProtectedRoute>
-            <Candidatos />
-          </ProtectedRoute>
-        } />
+        <Route path="/candidatos" element={<Candidatos />} />
         <Route path="/candidatos/nuevo" element={
           <ProtectedRoute>
             <CandidatoForm />

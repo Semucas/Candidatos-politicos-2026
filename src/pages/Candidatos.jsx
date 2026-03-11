@@ -6,6 +6,17 @@ function Candidatos() {
     const [candidatos, setCandidatos] = useState([])
     const [busqueda, setBusqueda] = useState('')
     const [cargando, setCargando] = useState(true)
+    const [session, setSession] = useState(null)
+
+    useEffect(() => {
+        fetchCandidatos()
+    }, [])
+
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session)
+        })
+    }, [])
 
     useEffect(() => {
         fetchCandidatos()
@@ -34,9 +45,11 @@ function Candidatos() {
         <div style={{ padding: '2rem', maxWidth: '1100px', margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <h2>🗳️ Candidatos 2026</h2>
-                <Link to="/candidatos/nuevo" style={{ background: '#e94560', color: 'white', padding: '0.6rem 1.2rem', borderRadius: '8px', textDecoration: 'none' }}>
-                    + Agregar Candidato
-                </Link>
+                {session && (
+                    <Link to="/candidatos/nuevo" style={{ background: '#e94560', color: 'white', padding: '0.6rem 1.2rem', borderRadius: '8px', textDecoration: 'none' }}>
+                        + Agregar Candidato
+                    </Link>
+                )}
             </div>
 
             <input
