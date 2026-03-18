@@ -8,7 +8,7 @@ Plataforma web informativa sobre los candidatos a Presidencia y Congreso de Colo
 
 ## 📋 Descripción
 
-Esta aplicación permite a los usuarios consultar información sobre los candidatos políticos colombianos del 2026. Incluye autenticación de usuarios y un panel administrativo para gestionar los candidatos registrados en la base de datos.
+Esta aplicación permite a los usuarios consultar información sobre los candidatos políticos colombianos del 2026. Incluye autenticación de usuarios, un sistema de votación y un panel administrativo para gestionar los candidatos registrados en la base de datos.
 
 ---
 
@@ -27,7 +27,8 @@ Esta aplicación permite a los usuarios consultar información sobre los candida
 ### Sección pública
 - Página informativa sobre los cargos que se eligen en 2026 (Presidente, Senado, Cámara)
 - Fechas clave del calendario electoral
-- Acceso a registro e inicio de sesión
+- Lista pública de 100 candidatos visible sin necesidad de registro
+- Buscador en tiempo real por nombre
 
 ### Autenticación
 - Registro de nuevos usuarios con email y contraseña
@@ -35,9 +36,14 @@ Esta aplicación permite a los usuarios consultar información sobre los candida
 - Cierre de sesión
 - Rutas protegidas para usuarios no autenticados
 
-### Panel de candidatos (solo usuarios autenticados)
-- Listado de hasta 100 candidatos registrados
-- Buscador en tiempo real por nombre
+### Sistema de votación
+- Cada usuario autenticado puede votar por su candidato favorito
+- Cada usuario solo puede emitir **un voto** (restricción a nivel de base de datos)
+- El candidato votado se resalta visualmente con un borde y etiqueta especial
+- Los candidatos se ordenan de mayor a menor votos en tiempo real
+- Contador de votos visible en cada tarjeta de candidato
+
+### Panel de administración (solo usuarios autenticados)
 - Crear nuevo candidato
 - Editar candidato existente
 - Eliminar candidato
@@ -103,7 +109,7 @@ Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
 ## 🗄️ Base de datos
 
-La tabla `candidatos` en Supabase tiene la siguiente estructura:
+### Tabla `candidatos`
 
 | Campo | Tipo | Descripción |
 |---|---|---|
@@ -114,7 +120,19 @@ La tabla `candidatos` en Supabase tiene la siguiente estructura:
 | `cargo` | TEXT | Presidente / Senador / Representante |
 | `departamento` | TEXT | Departamento de origen |
 | `propuestas` | TEXT | Principales propuestas |
+| `votos` | INTEGER | Contador de votos recibidos |
 | `created_at` | TIMESTAMP | Fecha de registro |
+
+### Tabla `votos`
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único |
+| `user_id` | UUID | Referencia al usuario que votó |
+| `candidato_id` | UUID | Referencia al candidato votado |
+| `created_at` | TIMESTAMP | Fecha del voto |
+
+> La restricción `UNIQUE(user_id)` garantiza que cada usuario solo pueda votar una vez.
 
 ---
 
